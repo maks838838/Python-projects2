@@ -1,4 +1,6 @@
 import json
+from datetime import datetime
+time = datetime.now().strftime("%Y-%m-%d %H:%M")
 ## FUNCRION TO LIST TASKS
 def id_check(tasklist):
     expected_id = 1
@@ -16,7 +18,7 @@ def printlist(tasklist):
         print("you have nothing to do")
     id_check(tasklist)
     for task in tasklist:
-        print(f'{task["id"]}. {task["description"]}, ({task["status"]})')
+        print(f'{task["id"]}. {task["description"]}, ({task["status"]})', {task["date"]}, {task["date_u"]})
     
 def usetask():
     status_list = ["to do", "in progress", "done"]
@@ -44,7 +46,7 @@ def usetask():
                 task_id = 1
             else:
                 task_id = tasklist[-1]["id"]+1
-            new_task = {"id": task_id, "description": add, "status": "to do"}
+            new_task = {"id": task_id, "description": add, "status": "to do", "date":time, "date_u":"No changes"}
             tasklist.append(new_task)
             printlist(tasklist)
             savetofile(tasklist)
@@ -80,6 +82,7 @@ def usetask():
                     found = True
                     add = input("wtite what u want to change into: ").strip()
                     task["description"] = add
+                    task["date_u"] = time
                     break
             if not found:    
                 print("no task with this id")
@@ -102,6 +105,7 @@ def usetask():
                         print("invalid status")
                         break
                     task["status"] = add
+                    task["date_u"] = time
                     break
             if not found:    
                 print("no task with this id")
@@ -143,4 +147,5 @@ def usetask():
             print("incorrect command")
             continue
 usetask()
+
 

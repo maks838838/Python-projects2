@@ -1,3 +1,7 @@
 __pycache__/
 *.pyc
 .python_history
+budget.json
+expenses.json
+espenses.csv
+tasks.json
