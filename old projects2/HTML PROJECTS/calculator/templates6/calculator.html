@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+
+<body>
+
+<h1>Calculator</h1>
+
+<form method="POST">
+
+    <input
+        type="number"
+        name="x"
+        placeholder="First number">
+
+    <input
+        type="number"
+        name="y"
+        placeholder="Second number">
+
+    <select name="command">
+        <option value="add">Add</option>
+        <option value="multiply">Multiply</option>
+        <option value="substract">substract</option>
+        <option value="divide">divide</option>
+    </select>
+
+    <button type="submit">
+        Calculate
+    </button>
+
+</form>
+
+<h2>Result: {{ result }}</h2>
+
+</body>
+</html>

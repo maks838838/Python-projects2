@@ -1,15 +1,15 @@
 def main():
     file = open("result.txt", "a")
     for _ in range(5):
-        x = int(input("what is x?"))
+        try:
+            x = int(input("what is x?"))
+        except ValueError:
+            continue
         result = square(x)
-        print("x squared is", square(x))
+        print("x squared is", result)
         file.write(f"{result}\n")
     file.close()
 
 def square(n):
     return n * n
-
-
-
 main()

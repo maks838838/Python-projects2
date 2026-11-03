@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Page Not Found</title>
+</head>
+<body>
+    <h1>404</h1>
+    <p>This page does not exist.</p>
+    <a href="{{ url_for('home') }}">Return Home</a>
+</body>
+</html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit Article Page</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <a href="{{ url_for('home') }}">
+        <button name="action" value="return">
+            Return
+        </button>
+        </a>
+        <form method="post">
+        <input type="text" maxlength="100" name="title" value="{{title}}" required>
+        <textarea type="text" name="content" value="{{content}}" maxlength="5000"  required>{{ content }}</textarea>
+        <input type="date" name="date" value="{{date}}" required>
+        <button name="action" value="save_changes">Save changes</button>
+        <p>{{error}}</p>
+        </form>
+    </body>
+</html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>Look page</title>
+    </head>
+    <body>
+        <a href="{{ url_for('home') }}">
+        <button name="action" value="return">
+            Return
+        </button>
+        </a>
+        <p style="font-size: larger;">{{title}}</p> 
+        <p>{{date}}</p>
+        <p>{{content}}</p>
+    </body>
+</html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>My Blog</h1>
+        <a href="/save">
+        <button>New Article</button>
+        </a>
+        <p>{{error}}</p>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+
+            {% for article in articles %}
+            <tr>
+                <td>
+                    <form method="POST">
+                        <input type="hidden" name="id" value="{{ article.id }}">
+                        
+                            <a href="/look/{{ article.id }}"><button name="action" value="look">{{ article.title }}</button>
+                                
+                            </a>
+                        
+                    </form>
+                </td>
+
+                <td>
+                    <form method="POST">
+                        <input type="hidden" name="id" value="{{ article.id }}">
+                        
+                            <a href="/edit/{{ article.id }}"><button name="action" value="edit">EDIT</button>
+                                
+                            </a>
+                        
+                    </form>
+                </td>
+                    
+                <td>
+                    <form method="POST">
+                        <input type="hidden" name="id" value="{{ article.id }}">
+                        <button name="action" value="delete">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Add Article Page</Title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <a href="{{ url_for('home') }}">
+        <button name="action" value="return">
+            Return
+        </button>
+        </a>
+        <form method="post">
+        <input name="title" placeholder="title" type="text" maxlength="100" required>
+        <textarea name="content" placeholder="content" type="text" maxlength="5000" required></textarea>
+        <button name="action" value="save">
+            Save
+        </button>
+        <p>{{error}}</p>
+        </form>
+        
+    </body>
+</html>
+body {
+    background-color: #1e1e1e;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    max-width: 700px;
+    margin: auto;
+}
+
+input[type="text"],
+input[type="date"] {
+    padding: 12px;
+    font-size: 16px;
+
+    background-color: #2d2d2d;
+    color: white;
+
+    border: 1px solid #555;
+    border-radius: 6px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #4da6ff;
+}
+
+button {
+    background-color: #0d6efd;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 10px 20px;
+    font-size: 15px;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #0b5ed7;
+}
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+a {
+    color: #66b3ff;
+    text-decoration: none;
+    background-color: #0d6efd;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 0px 0px;
+    font-size: 15px;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+th,
+td {
+    border: 1px solid #444;
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background-color: #333;
+}
+
+tr:nth-child(even) {
+    background-color: #2a2a2a;
+}
+
+tr:hover {
+    background-color: #383838;
+}
+
+p {
+    max-width: 900px;
+    margin: 10px auto;
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+input[type="hidden"] {
+    display: none;
+}
+textarea {
+    width: 100%;
+    min-height: 250px;
+
+    padding: 15px;
+
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+
+    background-color: #2d2d2d;
+    color: white;
+
+    border: 1px solid #555;
+    border-radius: 6px;
+
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #4da6ff;
+}

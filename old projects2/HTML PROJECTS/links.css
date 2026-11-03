@@ -1,0 +1,36 @@
+
+a {
+    display: inline-block;
+    color: white;
+    background-color: #1d1818;
+    text-decoration: none;
+
+    padding: 10px 16px;
+    margin: 6px;
+
+    border: 1px solid #555;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+
+    transition: background-color 0.2s, color 0.2s, transform 0.2s;
+    cursor: pointer;
+}
+
+a:hover {
+    background-color: #4a90e2;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 6px rgba(67, 30, 30, 0.15);
+}
+
+a:active {
+    background-color: #357abd;
+    transform: translateY(0);
+}
+
+a:visited {
+    color: #dddddd;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Edit Article Page</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <a class="button" href="{{ url_for('home') }}">
+            Return
+        </a>
+        <form method="post">
+        <input type="text" maxlength="100" name="title" value="{{title}}" required>
+        <textarea type="text" name="content" value="{{content}}" maxlength="5000"  required>{{ content }}</textarea>
+        <input type="date" name="date" value="{{date}}" required>
+        <button name="action" value="save_changes">Save changes</button>
+        <p>{{error}}</p>
+        </form>
+    </body>
+</html>

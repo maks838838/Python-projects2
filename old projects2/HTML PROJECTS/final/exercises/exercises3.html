@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+        input{
+            display: block;
+            width: 200px;
+        }
+        button:hover{
+        transition: padding 1s, background-color 0.8s, box-shadow 0.3s;
+        box-shadow: 6px 6px 6px rgba(215, 57, 57, 0.15);
+        opacity: 0.8;
+        background-color: black;      
+        cursor: pointer;  
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+        button:active{
+        transform: translateY(4px) translateX(4px);
+        box-shadow: 0 0 0 darkred;
+        }
+        
+        
+    .save:hover{
+        transition: border-width 0.1s;
+        border-width: 3px;
+        padding: 9px 18px;
+    }
+            .download:hover{
+            transition: 0.5s;
+            color:white;
+            background-color:rgb(121, 82, 179) ;
+            }
+
+            button{
+            padding: 13px 20px;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            border: none;
+            font: bold;
+            }
+            .uber{
+                background-color: black;
+                color: white;
+            }
+            .amazon, .linkedln, .save, .buy, .add{
+            border-radius: 50px;
+            }
+            .amazon{
+                background-color: rgb(255, 216, 20);
+
+            }
+            .github{background-color: rgb(46, 164, 79);
+            color: white;
+            border-radius: 10px;
+            font: bold;}
+            .bootstrap{
+                background-color: blueviolet;
+                color: white;
+                border-radius: 5px;
+            }
+            .download   {
+            background-color: white;
+            padding: 12px 19px;
+            border: 1px solid;
+            border-color: rgb(121, 82, 179);
+            border-radius: 2px;
+            color: rgb(121, 82, 179);
+        }
+            .linkedln{
+                background-color: rgb(10, 10, 194);
+                color: white;
+            }
+            .save{
+             background-color: white;
+            padding: 12px 19px;
+            border: 1px solid;
+            border-color: rgb(10, 10, 194);
+            color: rgb(10, 10, 194);
+            }
+            .add{
+                background-color: rgb(255, 216, 20);
+            padding: 8px 40px;
+            margin-top: 5px;
+            }
+            .price{
+                color: rgb(0, 118, 0);
+            
+            }
+            .buy{
+                background-color: rgb(255, 164, 28);
+                padding: 8px 40px;
+                margin-top: 5px;
+            }
+            .product{font-weight: 900;
+            font-size: x-large;}
+        </style>
+    </head>
+    <body>
+    <button class="uber">Request now</button><br>
+    <button class="amazon">Add to Cart</button><br>
+    <button class="github">Sign up</button><br>
+    <button class="bootstrap">Get started</button>
+    <button class="download" >Download</button><br>
+    <div style="display: grid;  grid-template-rows:auto;" >
+    <button class="linkedln">Apply on company website</button>
+    <button class="save">Save</button>
+    </div>
+    <div>
+    <a href="amazon.com" target="_blank">Back to amazon</a>
+    <p class="product">Nice black running shoes</p>
+    <p class="price">39 $ - in stock</p>
+    <p class="delivery">Free delivery tomorrow.</p>
+    <button class="add">Add to cart</button> <button class="buy">Buy now</button>
+    </div>
+    <input type="text" placeholder="search">
+    <input type="checkbox" placeholder="none">
+    <input type="date">
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Unit Converter</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <form method="POST">
+        <input name="amount" placeholder="amount" type="text">
+        <select name="base_unit" placeholder="from" >
+            <option value="millimeter">Millimeter</option>
+            <option value="centimeter">Centimeter</option>
+            <option value="meter">Meter</option>
+            <option value="kilometer">Kilometer</option>
+            <option value="inch">Inch</option>
+            <option value="foot">Foot</option>
+            <option value="yard">Yard</option>
+            <option value="mile">Mile</option>
+        </select>
+        <select name="end_unit" placeholder="to">
+            <option value="millimeter">Millimeter</option>
+            <option value="centimeter">Centimeter</option>
+            <option value="meter">Meter</option>
+            <option value="kilometer">Kilometer</option>
+            <option value="inch">Inch</option>
+            <option value="foot">Foot</option>
+            <option value="yard">Yard</option>
+            <option value="mile">Mile</option>
+        </select>
+        <button name="action" value="convert_length">convert</button>
+        <p>Result: {{result}}</p>
+        </form>
+        <form method="POST">
+        <input name="amount" placeholder="amount" type="text">
+        <select name="base_unit">
+            <option value="milligram">Milligram</option>
+            <option value="gram">Gram</option>
+            <option value="kilogram">Kilogram</option>
+            <option value="ounce">Ounce</option>
+            <option value="pound">Pound</option>
+        </select>
+        <select name="end_unit">
+            <option value="milligram">Milligram</option>
+            <option value="gram">Gram</option>
+            <option value="kilogram">Kilogram</option>
+            <option value="ounce">Ounce</option>
+            <option value="pound">Pound</option>
+        </select>
+        <button name="action" value="convert_weight">convert</button>
+        <p>Result: {{result1}}</p>
+        </form>
+        <form method="POST">
+        <input 
+            name="amount" 
+            placeholder="amount" 
+            type="number"
+            step="any"
+        >
+
+        <select name="base_unit">
+            <option value="°C">Celsius (°C)</option>
+            <option value="°F">Fahrenheit (°F)</option>
+            <option value="K">Kelvin (K)</option>
+        </select>
+
+        <select name="end_unit">
+            <option value="°C">Celsius (°C)</option>
+            <option value="°F">Fahrenheit (°F)</option>
+            <option value="K">Kelvin (K)</option>
+        </select>
+
+        <button name="action" value="convert_temperature">
+            Convert
+        </button>
+        <p>Result: {{result2}}</p>
+        </form>
+    </body>
+</html>

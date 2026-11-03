@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>My Blog</h1>
+        <a href="/save">
+        <button>New Article</button>
+        </a>
+        <form method="post" style="display: inline-block; ">
+        <button name="action" value="logout">logout</button>
+        </form>
+        <p>{{error}}</p>
+        <table>
+            <tr>
+                <th>Title</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+
+            {% for article in articles %}
+            <tr>
+                <td>
+                    <form method="POST">
+                        <input type="hidden" name="id" value="{{ article.id }}">
+                        
+                            <a class="button" href="/look/{{ article.id }}">{{ article.title }}
+                                
+                            </a>
+                        
+                    </form>
+                </td>
+
+                <td>
+                    <input type="hidden" name="id" value="{{ article.id }}">
+                    <a class="button" href="/edit/{{ article.id }}">                          
+                         EDIT
+                    </a>
+                </td>
+                    
+                <td>
+                    <form method="POST">
+                        <input type="hidden" name="id" value="{{ article.id }}">
+                        <button name="action" value="delete">Delete</button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

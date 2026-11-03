@@ -1,0 +1,168 @@
+/* ---------- General ---------- */
+
+body {
+    background-color: #1e1e1e;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+    max-width: 1000px;
+    margin: auto;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+.error {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+/* ---------- Forms ---------- */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    max-width: 700px;
+    margin: auto;
+    
+}
+
+input[type="text"],
+input[type="date"],
+textarea {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 12px;
+
+    background: #2d2d2d;
+    color: white;
+
+    border: 1px solid #555;
+    border-radius: 6px;
+
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+textarea {
+    min-height: 250px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #4da6ff;
+}
+
+/* ---------- Buttons ---------- */
+
+button,
+.button {
+    display: inline-block;
+
+    padding: 10px 20px;
+
+    background: #0d6efd;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+
+    cursor: pointer;
+    transition: background-color .2s;
+}
+
+button:hover,
+.button:hover {
+    background: #0b5ed7;
+    text-decoration: none;
+}
+
+/* ---------- Normal links ---------- */
+
+a {
+    color: #66b3ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- Table ---------- */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+}
+
+th,
+td {
+    border: 1px solid #444;
+    padding: 12px;
+}
+
+th {
+    background: #333;
+    width: 100%;
+}
+
+tr:nth-child(even) {
+    background: #2a2a2a;
+}
+
+tr:hover {
+    background: #383838;
+}
+
+/* Center Edit/Delete columns */
+
+th:nth-child(2),
+th:nth-child(3),
+td:nth-child(2),
+td:nth-child(3) {
+    text-align: center;
+}
+
+/* ---------- Hidden ---------- */
+
+input[type="hidden"] {
+    display: none;
+}
+
+/* ---------- Article page ---------- */
+
+.article-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.article-date {
+    color: #b0b0b0;
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.article-content {
+    white-space: pre-wrap;
+    line-height: 1.8;
+}

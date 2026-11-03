@@ -1,14 +1,11 @@
-def intro():
-    name = input("print your name? ").title().strip() 
-    print("Hello", name)
+
 def calc():
+    print("Welcome to the calculator")
     while True:
         act = input("Choose an action (*, /, +, //, **, %, or -): ")
         if act not in ("*", "/", "+", "//", "**", "%", "-"):
             print("Invalid action. Please choose a valid action.")
             continue
-        if act in ("**"):
-            print("Note: For '**' operations, the second number should be an integer.")
         try:
             x = float(input("Enter the first number: "))
             y = float(input("Enter the second number: "))
@@ -32,14 +29,10 @@ def calc():
             result = x // y
         elif act == "%":
             result = x % y
-        else:
-            print("invalid action")
-            continue
         print("Result:",x, act, y, "=", result)
         again = input("Do you want to perform another calculation? (y/n): ").lower().strip()
         if again != "y":
             print("Thank you for using the calculator. Goodbye!")
             break        
-print("Welcome to the calculator")
 calc()
 

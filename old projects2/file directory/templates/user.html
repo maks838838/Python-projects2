@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <h1>My Blog</h1>
+        <p>{{error}}</p>
+        <form method="post" style="display: inline-block; ">
+        <button name="action" value="logout">logout</button>
+        </form>
+        <table>
+            <tr>
+                <th>Title</th>
+            </tr>
+            {% for article in articles %}
+            <tr>
+                <td>
+                    <form method="POST">
+                        <input type="hidden" name="id" value="{{ article.id }}">
+                        
+                            <a class="button" href="/look/{{ article.id }}">
+                                {{ article.title }}
+                            </a>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </body>
+</html>

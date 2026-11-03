@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <title>Look page</title>
+    </head>
+    <body>
+        <a class="button" href="{{ url_for('home') }}">
+            Return
+        </a>
+        <p style="font-size: larger;">{{title}}</p> 
+        <p>{{date}}</p>
+        <p>{{content}}</p>
+    </body>
+</html>

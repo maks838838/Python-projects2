@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Robot interface</title>
+</head>
+<h2 id="message">{{ message }}</h2>
+<script>
+    setTimeout(function () {
+        document.getElementById("message").style.display = "none";
+    }, 5000);
+</script>
+<body>
+
+<h1>Robot interface</h1>
+
+<form method="POST">
+    <style>
+        body {
+    background-color: rgb(2, 2, 2);
+    color: rgb(237, 242, 244);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertical center */
+    align-items: center;     /* Horizontal center */
+
+    height: 100vh;
+    margin: 0;
+}
+
+button {
+    background-color: rgb(247, 248, 249);
+    color: rgb(9, 9, 9);
+    padding: 100px 200px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+}
+</style>
+    <button type="submit">Click</button>
+    
+</form>
+
+<h2>{{ message }}</h2>
+
+</body>
+</html>

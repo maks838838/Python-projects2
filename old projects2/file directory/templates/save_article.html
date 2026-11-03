@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <Title>Add Article Page</Title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
+    <body>
+        <a class="button" href="{{ url_for('home') }}">
+            Return
+        </a>
+        <form method="post">
+        <input name="title" placeholder="title" type="text" maxlength="100" required>
+        <textarea name="content" placeholder="content" type="text" maxlength="5000" required></textarea>
+        <button name="action" value="save">
+            Save
+        </button>
+        <p>{{error}}</p>
+        </form>
+        
+    </body>
+</html>
